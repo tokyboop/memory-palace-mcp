@@ -1,0 +1,7 @@
+config.yaml
+.mcp.json
+db/
+data/
+__pycache__/
+*.pyc
+.env
