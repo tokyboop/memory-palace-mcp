@@ -10,6 +10,13 @@ maintenance cost.
 Built as a minimal reference for anyone putting a Remote MCP server into
 production. Designed to be forked and adapted.
 
+## Goal and current state
+
+The goal is a Memory Palace — associative recall, paths between notes,
+spatial retrieval. v1 ships the foundation only: a remote, multi-client
+**knowledge base** that stores, indexes, searches, and reads markdown. The
+palace layer isn't built yet.
+
 ## Why this exists
 
 The "hello world" for Remote MCP is scattered across spec updates, SDK changes,
@@ -107,6 +114,10 @@ MIT.
 一个个人知识服务器，任何 Claude 客户端（Desktop / CLI / Web）都能通过 Model Context Protocol 连上。基于 **Streamable HTTP** 提供 markdown 笔记服务，用 **ripgrep** 做关键词搜索——不跑 embedding、不依赖向量数据库，零维护成本。
 
 作为给想把 Remote MCP Server 真正部署到生产环境的人用的最小参考，鼓励 fork 和改造。
+
+## 目标与现状
+
+目标是做一座 Memory Palace——关联回忆、笔记之间的路径、空间化检索。v1 先把地基做掉：一个远程可达、多端同步的**知识库**，负责存、索引、搜、读 markdown。宫殿层还没盖。
 
 ## 为什么做这个
 
