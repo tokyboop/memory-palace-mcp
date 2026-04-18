@@ -87,8 +87,10 @@ Claude.ai Web ─┘                │
   prevent local/remote divergence when both are configured on the same client.
 - **ripgrep, not embeddings.** At personal scale (< 100 notes) embeddings add
   cost and maintenance burden without better recall than keyword search.
-- **No auth in v1.** Obscurity via a non-published URL; `Bearer` / OAuth is a
-  planned backlog item and is a straightforward addition on top of FastMCP.
+- **Bearer token at the reverse proxy.** A single-line nginx
+  `if ($http_authorization != ...)` is enough for a single-user deployment.
+  OAuth 2.1 is the next step if you need multi-client or Web/mobile
+  (Anthropic's web connector is OAuth-only).
 
 ## Layout
 
@@ -181,7 +183,7 @@ Claude.ai Web ─┘                │
 - **用 Streamable HTTP，不用 SSE**：SSE 在 2026-04-01 起已弃用
 - **本地 stdio fallback 只读**：写操作强制走远程，避免本地/远程双向漂移
 - **用 ripgrep 而不是 embedding**：个人规模（< 100 篇）下 embedding 的成本和维护负担都不划算，召回也不明显更好
-- **v1 不做 auth**：靠"域名未公开"兜底；`Bearer` / OAuth 在 backlog，FastMCP 上加一层很轻
+- **反代层加 Bearer token**：nginx `if ($http_authorization != ...)` 一行就够单人用。需要多端或 Web/手机时再升 OAuth 2.1（Anthropic 的 web connector 只走 OAuth）
 
 ## 目录结构
 
